@@ -20,7 +20,7 @@ echo "Add user c and pick password"
 systemd-nspawn -D bootstrap adduser c
 
 systemd-nspawn -D bootstrap -P /bin/bash <<EOT
-DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends build-essential pkg-config libevdev-dev git ca-certificates
+DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends build-essential pkg-config libevdev-dev git ca-certificates vim
 
 su - c
 
