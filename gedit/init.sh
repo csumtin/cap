@@ -14,10 +14,10 @@ mkdir bootstrap
 debootstrap --arch=amd64 --variant=minbase stable bootstrap
 
 echo "Pick root password"
-systemd-nspawn -D bootstrap passwd
+systemd-nspawn -D bootstrap -M gedit passwd
 
 echo "Add user c and pick password"
-systemd-nspawn -D bootstrap adduser c
+systemd-nspawn -D bootstrap -M gedit adduser c
 
 systemd-nspawn -D bootstrap -M gedit -P /bin/bash <<EOT
 DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends gedit dbus-x11 ca-certificates wget

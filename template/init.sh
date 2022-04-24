@@ -14,11 +14,11 @@ mkdir bootstrap
 debootstrap --arch=amd64 --variant=minbase stable bootstrap
 
 echo "Pick root password"
-systemd-nspawn -D bootstrap -M firefox passwd
+systemd-nspawn -D bootstrap -M template passwd
 
 echo "Add user c and pick password"
-systemd-nspawn -D bootstrap -M firefox adduser c
+systemd-nspawn -D bootstrap -M template adduser c
 
-systemd-nspawn -D bootstrap -M firefox -P /bin/bash <<EOT
-DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends firefox-esr pulseaudio
+systemd-nspawn -D bootstrap -M template -P /bin/bash <<EOT
+
 EOT
