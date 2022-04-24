@@ -14,13 +14,13 @@ mkdir bootstrap
 debootstrap --arch=amd64 --variant=minbase stable bootstrap
 
 echo "Pick root password"
-systemd-nspawn -D bootstrap -M cua passwd
+systemd-nspawn -D bootstrap passwd
 
 echo "Add user c and pick password"
-systemd-nspawn -D bootstrap -M cua adduser c
+systemd-nspawn -D bootstrap adduser c
 
-systemd-nspawn -D bootstrap -M cua -P /bin/bash <<EOT
-DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends build-essential pkg-config libevdev-dev
+systemd-nspawn -D bootstrap -P /bin/bash <<EOT
+DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends build-essential pkg-config libevdev-dev git ca-certificates
 
 su - c
 
