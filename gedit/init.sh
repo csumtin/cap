@@ -20,7 +20,7 @@ echo "Add user c and pick password"
 systemd-nspawn -D bootstrap adduser c
 
 systemd-nspawn -D bootstrap -P /bin/bash <<EOT
-DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends gedit dbus-x11 ca-certificates wget
+DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends gedit gedit-plugins dbus-x11 ca-certificates wget
 
 su - c
 

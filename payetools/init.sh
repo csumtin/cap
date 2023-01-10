@@ -25,9 +25,9 @@ DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends wget ca-ce
 
 su - c
 
-wget https://www.gov.uk/government/uploads/uploaded/hmrc/payetools-rti-22.0.22076.204-linux.zip
-unzip payetools-rti-22.0.22076.204-linux.zip
-rm payetools-rti-22.0.22076.204-linux.zip
+wget https://www.gov.uk/government/uploads/uploaded/hmrc/payetools-rti-22.2.22292.290-linux.zip
+unzip payetools-rti-22.2.22292.290-linux.zip
+rm payetools-rti-22.2.22292.290-linux.zip
 
 echo 'export QT_X11_NO_MITSHM=1' >> .bashrc
 
