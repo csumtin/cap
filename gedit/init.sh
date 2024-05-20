@@ -26,12 +26,13 @@ su - c
 
 mkdir -p temp
 cd temp
-wget https://github.com/jefferyto/gedit-control-your-tabs/archive/master.tar.gz
-tar xvf master.tar.gz
+
+wget https://raw.githubusercontent.com/jonasfj/gedit-tab-control//master/TabControl.py
+wget https://raw.githubusercontent.com/jonasfj/gedit-tab-control//master/TabControl.plugin
 
 mkdir -p /home/c/.local/share/gedit/plugins
-cp gedit-control-your-tabs-master/controlyourtabs.plugin /home/c/.local/share/gedit/plugins/
-cp -Rp gedit-control-your-tabs-master/controlyourtabs /home/c/.local/share/gedit/plugins/
+mv TabControl.py /home/c/.local/share/gedit/plugins/
+mv TabControl.plugin /home/c/.local/share/gedit/plugins/
 
 cd
 rm -rf temp
